@@ -2,13 +2,14 @@ import random
 
 
 class Enemy:
-    def __init__(self, name, health, mana, strength, intelligence, agility):
+    def __init__(self, name: str, health: int, mana: int, strength: int, intelligence: int, agility: int, defense: float):
         self.name = name
         self.health = health
         self.mana = mana
         self.strength = strength
         self.intelligence = intelligence
         self.agility = agility
+        self.defense = defense
 
 
 def generate_random_enemies():
@@ -21,7 +22,8 @@ def generate_random_enemies():
         strength = random.randint(50, 100)
         intelligence = random.randint(50, 100)
         agility = random.randint(50, 100)
-        enemies.append(Enemy(enemy, health, mana, strength, intelligence, agility))
+        defense = health / 2
+        enemies.append(Enemy(enemy, health, mana, strength, intelligence, agility, defense))
     return enemies
 
 
@@ -35,5 +37,7 @@ def generate_random_bosses():
         strength = random.randint(100, 200)
         intelligence = random.randint(100, 200)
         agility = random.randint(100, 200)
-        bosses.append(Enemy(boss, health, mana, strength, intelligence, agility))
+        defense = health / 2
+        bosses.append(Enemy(boss, health, mana, strength, intelligence, agility, defense))
     return bosses
+

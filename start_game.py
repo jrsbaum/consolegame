@@ -29,7 +29,7 @@ def start():
 
             if action == 1:
                 # Calcular dano causado pelo jogador
-                damage = player.strength - enemy.defense
+                damage = enemy.defense - player.strength
                 if damage < 0:
                     damage = 0
                 enemy.health -= damage
@@ -51,7 +51,7 @@ def start():
                 break
 
             # Calcular dano causado pelo inimigo
-            damage = enemy.strength - player.defense
+            damage = player.defense - enemy.strength
             if damage < 0:
                 damage = 0
             player.health -= damage
